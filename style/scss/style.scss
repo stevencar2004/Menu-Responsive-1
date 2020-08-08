@@ -1,0 +1,133 @@
+@import "config";
+
+// ____________________________LAYOUT
+.header {
+	position: relative;
+	width: 100%;
+	height: 3.5em;
+	&__logo {
+		width: 50%;
+		height: 3.5em;
+		line-height: 3.5em;
+		padding-left: 0.8em;
+
+		float: left;
+	}
+	&__icon,
+	.label__icon {
+		vertical-align: middle;
+	}
+
+	//Estilos para el boton despegable
+
+	&__label {
+		position: relative;
+		right: 2em;
+		line-height: 3.35em;
+
+		float: right;
+	}
+	.label__icon {
+		padding: 0.2em;
+	}
+	&__inpt-check {
+		display: none;
+	}
+	&__inpt-check:checked ~ .menu {
+		right: 0;
+	}
+}
+.menu {
+	position: relative;
+	top: 0em;
+	right: -100%;
+	z-index: 10;
+	width: 100%;
+	height: 100vh;
+	clear: both;
+	&__list {
+		width: 100%;
+	}
+	&__item {
+		padding: 1.2em 0 1.2em 2.5em;
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+	&__link {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	.desplegable__icon {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 0.2em;
+	}
+	.sub-menu {
+		width: 95%;
+		margin-top: 0.5em;
+		.menu__item {
+			padding: 1em;
+			width: 100%;
+		}
+	}
+}
+.main {
+	width: 100%;
+	height: auto;
+	&__box {
+		width: 100%;
+		padding: 1em;
+	}
+	&__title {
+		margin-bottom: 0.02em;
+	}
+}
+// _________________________ THEME
+.header {
+	background-color: $color-base;
+	&__icon,
+	.label__icon {
+		color: $color-primario-dark;
+		transition: all 0.3s;
+		font-weight: bold;
+		&:hover {
+			cursor: pointer;
+			color: $color-primario;
+		}
+	}
+}
+.menu {
+	background-color: $color-base-trans;
+	transition: all 0.5s ease;
+	&__list {
+		list-style: none;
+	}
+	.sub-menu {
+		display: none;
+		list-style: none;
+		.menu__item {
+			background-color: $color-base;
+			border: none;
+		}
+	}
+	&__item {
+		border-bottom: 0.01em solid $color-light;
+	}
+	&__link {
+		color: $color-light;
+		text-decoration: none;
+		@include lato(700);
+	}
+}
+.main {
+	&__box:nth-child(even) {
+		background-color: $color-light;
+	}
+	&__title {
+		@include lato(700);
+	}
+}
+//RESPONSIVE DESING
+@import "media-query/media";

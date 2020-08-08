@@ -1,0 +1,36 @@
+// 1200px en adelante
+@media only screen and (min-width: 1200px) {
+	body {
+		font-size: 17.5;
+		@include font-size($b: 1.9em, $s: 1.2em, $i-b: 2.24em, $i: 1.3em, $es: 1.4em);
+	}
+	// ____________________________LAYOUT
+	.header {
+		height: 5em;
+		&__logo {
+			width: 30%;
+			height: 5em;
+			line-height: 5em;
+		}
+	}
+	.menu {
+		top: -5em;
+		height: 5em;
+		&__list {
+			line-height: 5em;
+			padding-right: 2em;
+		}
+		&__item {
+			width: 5.5em;
+			margin-left: 1.2em;
+		}
+		.sub-menu {
+			width: 7em;
+		}
+	}
+	.main {
+		&__box {
+			padding: 1.5em;
+		}
+	}
+}

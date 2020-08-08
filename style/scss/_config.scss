@@ -1,0 +1,53 @@
+:root {
+	/*PALETA DE COLORES DE LA PAGINA*/
+	--color-base: #03071e;
+	--color-base-trans: #03071eec;
+	--color-primario-dark: #9d0208;
+	--color-primario: #d00000;
+	--color-light: #ecf0f1;
+}
+//paleta de colores
+$color-base: var(--color-base);
+$color-base-trans: var(--color-base-trans);
+$color-primario-dark: var(--color-primario-dark);
+$color-primario: var(--color-primario);
+$color-light: var(--color-light);
+
+//tipografias
+@mixin lato($bold) {
+	font-family: "Lato", sans-serif;
+	font-weight: $bold; //Regular 400 | Bold 700
+}
+
+@mixin font-size($b: 1.8em, $s: 1.1em, $i-b: 1.65em, $i: 1.3em, $es: 1em) {
+	h2 {
+		font-size: $b;
+	}
+	a {
+		font-size: $s;
+	}
+	.i-big {
+		font-size: $i-b;
+	}
+	i {
+		font-size: $i;
+	}
+	p {
+		font-size: $es;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	overflow-x: hidden;
+}
+body {
+	font-size: 15px;
+	@include font-size;
+	@include lato(400);
+	overflow-x: hidden;
+}

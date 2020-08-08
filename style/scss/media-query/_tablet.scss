@@ -1,0 +1,158 @@
+// 580 - 640px - 720px - 780px
+@media only screen and (min-width: 480px) {
+	body {
+		font-size: 16px;
+		@include font-size($b: 1.85em, $s: 1.2em, $i-b: 1.7em, $i: 1.35em, $es: 1.25em);
+	}
+}
+@media only screen and (min-width: 520px) {
+	body {
+		@include font-size($b: 1.85em, $s: 0.9em, $i-b: 1.7em, $i: 1.35em, $es: 1.25em);
+	}
+	// ____________________________LAYOUT
+	.header {
+		height: 4em;
+		&__logo {
+			width: 30%;
+			height: 4em;
+			line-height: 4em;
+		}
+		//Estilos para el boton despegable
+		&__label {
+			line-height: 0;
+			display: none;
+		}
+		.label__icon {
+			padding: 0;
+			display: none;
+		}
+		&__inpt-check {
+			display: none;
+		}
+	}
+	.menu {
+		position: relative;
+		top: -4em;
+		left: 0;
+		z-index: 100;
+		width: 70%;
+		height: 4em;
+		float: right;
+		&__list {
+			width: 100%;
+			height: 100%;
+			line-height: 4em;
+			padding-right: 1.5em;
+			display: flex;
+			justify-content: flex-end;
+		}
+		&__item {
+			padding: 0em;
+			text-align: center;
+			width: 4em;
+			height: 100%;
+			display: block;
+			margin-left: 1em;
+		}
+		&__link {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.sub-menu {
+			position: relative;
+			display: block;
+			width: 6em;
+			top: -0.5em;
+			left: 50%;
+			transform: translateX(-60%);
+			.menu__item {
+				padding: 0;
+				width: 100%;
+				line-height: 3em;
+			}
+			.menu__link {
+				padding: 0em;
+			}
+		}
+	}
+	.clear {
+		overflow: hidden;
+		clear: both;
+	}
+	.main {
+		position: relative;
+		top: -4em;
+		&__box {
+			width: 50%;
+			padding: 1em;
+			float: left;
+		}
+		&__title {
+			margin-bottom: 0.2em;
+		}
+	}
+	// _________________________ THEME
+	.menu {
+		background-color: none;
+		.sub-menu {
+			display: none;
+			list-style: none;
+			.menu__item {
+				border-bottom: none;
+			}
+		}
+		&__item {
+			border-bottom: none;
+		}
+		&__link:hover {
+			color: $color-primario;
+		}
+	}
+	.main {
+		&__box:nth-child(even) {
+			background-color: transparent;
+		}
+		&__title {
+			color: $color-primario-dark;
+		}
+		&__text {
+			color: $color-base;
+		}
+	}
+}
+@media only screen and (min-width: 640px) {
+	body {
+		font-size: 16.5;
+	}
+}
+@media only screen and (min-width: 720px) {
+	body {
+		font-size: 16.8;
+		@include font-size($b: 1.85em, $s: 1em, $i-b: 2em, $i: 1.35em, $es: 1.25em);
+	}
+	// ____________________________LAYOUT
+	.main {
+		position: relative;
+		top: -4em;
+		&__box {
+			width: 50%;
+			padding: 1em;
+			float: left;
+		}
+		&__title {
+			margin-bottom: 0.5em;
+		}
+	}
+	.menu {
+		&__item {
+			width: 5em;
+			margin-left: 0.5em;
+		}
+	}
+}
+@media only screen and (min-width: 780px) {
+	body {
+		@include font-size($b: 1.88em, $s: 1.1em, $i-b: 2.1em, $i: 1.38em, $es: 1.3em);
+	}
+}

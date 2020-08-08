@@ -1,0 +1,554 @@
+:root {
+  /*PALETA DE COLORES DE LA PAGINA*/
+  --color-base: #03071e;
+  --color-base-trans: #03071eec;
+  --color-primario-dark: #9d0208;
+  --color-primario: #d00000;
+  --color-light: #ecf0f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+body h2 {
+  font-size: 1.8em;
+}
+body a {
+  font-size: 1.1em;
+}
+body .i-big {
+  font-size: 1.65em;
+}
+body i {
+  font-size: 1.3em;
+}
+body p {
+  font-size: 1em;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 3.5em;
+}
+.header__logo {
+  width: 50%;
+  height: 3.5em;
+  line-height: 3.5em;
+  padding-left: 0.8em;
+  float: left;
+}
+.header__icon,
+.header .label__icon {
+  vertical-align: middle;
+}
+.header__label {
+  position: relative;
+  right: 2em;
+  line-height: 3.35em;
+  float: right;
+}
+.header .label__icon {
+  padding: 0.2em;
+}
+.header__inpt-check {
+  display: none;
+}
+.header__inpt-check:checked ~ .menu {
+  right: 0;
+}
+
+.menu {
+  position: relative;
+  top: 0em;
+  right: -100%;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  clear: both;
+}
+.menu__list {
+  width: 100%;
+}
+.menu__item {
+  padding: 1.2em 0 1.2em 2.5em;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.menu__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.menu .desplegable__icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.2em;
+}
+.menu .sub-menu {
+  width: 95%;
+  margin-top: 0.5em;
+}
+.menu .sub-menu .menu__item {
+  padding: 1em;
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+  height: auto;
+}
+.main__box {
+  width: 100%;
+  padding: 1em;
+}
+.main__title {
+  margin-bottom: 0.02em;
+}
+
+.header {
+  background-color: var(--color-base);
+}
+.header__icon,
+.header .label__icon {
+  color: var(--color-primario-dark);
+  transition: all 0.3s;
+  font-weight: bold;
+}
+.header__icon:hover,
+.header .label__icon:hover {
+  cursor: pointer;
+  color: var(--color-primario);
+}
+
+.menu {
+  background-color: var(--color-base-trans);
+  transition: all 0.5s ease;
+}
+.menu__list {
+  list-style: none;
+}
+.menu .sub-menu {
+  display: none;
+  list-style: none;
+}
+.menu .sub-menu .menu__item {
+  background-color: var(--color-base);
+  border: none;
+}
+.menu__item {
+  border-bottom: 0.01em solid var(--color-light);
+}
+.menu__link {
+  color: var(--color-light);
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.main__box:nth-child(even) {
+  background-color: var(--color-light);
+}
+.main__title {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 400px) {
+  body {
+    font-size: 15.5px;
+  }
+}
+@media only screen and (min-width: 440px) {
+  body {
+    font-size: 15.8px;
+  }
+}
+@media only screen and (min-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+  body h2 {
+    font-size: 1.85em;
+  }
+  body a {
+    font-size: 1.2em;
+  }
+  body .i-big {
+    font-size: 1.7em;
+  }
+  body i {
+    font-size: 1.35em;
+  }
+  body p {
+    font-size: 1.25em;
+  }
+}
+@media only screen and (min-width: 520px) {
+  body h2 {
+    font-size: 1.85em;
+  }
+  body a {
+    font-size: 0.9em;
+  }
+  body .i-big {
+    font-size: 1.7em;
+  }
+  body i {
+    font-size: 1.35em;
+  }
+  body p {
+    font-size: 1.25em;
+  }
+
+  .header {
+    height: 4em;
+  }
+  .header__logo {
+    width: 30%;
+    height: 4em;
+    line-height: 4em;
+  }
+  .header__label {
+    line-height: 0;
+    display: none;
+  }
+  .header .label__icon {
+    padding: 0;
+    display: none;
+  }
+  .header__inpt-check {
+    display: none;
+  }
+
+  .menu {
+    position: relative;
+    top: -4em;
+    left: 0;
+    z-index: 100;
+    width: 70%;
+    height: 4em;
+    float: right;
+  }
+  .menu__list {
+    width: 100%;
+    height: 100%;
+    line-height: 4em;
+    padding-right: 1.5em;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .menu__item {
+    padding: 0em;
+    text-align: center;
+    width: 4em;
+    height: 100%;
+    display: block;
+    margin-left: 1em;
+  }
+  .menu__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .menu .sub-menu {
+    position: relative;
+    display: block;
+    width: 6em;
+    top: -0.5em;
+    left: 50%;
+    transform: translateX(-60%);
+  }
+  .menu .sub-menu .menu__item {
+    padding: 0;
+    width: 100%;
+    line-height: 3em;
+  }
+  .menu .sub-menu .menu__link {
+    padding: 0em;
+  }
+
+  .clear {
+    overflow: hidden;
+    clear: both;
+  }
+
+  .main {
+    position: relative;
+    top: -4em;
+  }
+  .main__box {
+    width: 50%;
+    padding: 1em;
+    float: left;
+  }
+  .main__title {
+    margin-bottom: 0.2em;
+  }
+
+  .menu {
+    background-color: none;
+  }
+  .menu .sub-menu {
+    display: none;
+    list-style: none;
+  }
+  .menu .sub-menu .menu__item {
+    border-bottom: none;
+  }
+  .menu__item {
+    border-bottom: none;
+  }
+  .menu__link:hover {
+    color: var(--color-primario);
+  }
+
+  .main__box:nth-child(even) {
+    background-color: transparent;
+  }
+  .main__title {
+    color: var(--color-primario-dark);
+  }
+  .main__text {
+    color: var(--color-base);
+  }
+}
+@media only screen and (min-width: 640px) {
+  body {
+    font-size: 16.5;
+  }
+}
+@media only screen and (min-width: 720px) {
+  body {
+    font-size: 16.8;
+  }
+  body h2 {
+    font-size: 1.85em;
+  }
+  body a {
+    font-size: 1em;
+  }
+  body .i-big {
+    font-size: 2em;
+  }
+  body i {
+    font-size: 1.35em;
+  }
+  body p {
+    font-size: 1.25em;
+  }
+
+  .main {
+    position: relative;
+    top: -4em;
+  }
+  .main__box {
+    width: 50%;
+    padding: 1em;
+    float: left;
+  }
+  .main__title {
+    margin-bottom: 0.5em;
+  }
+
+  .menu__item {
+    width: 5em;
+    margin-left: 0.5em;
+  }
+}
+@media only screen and (min-width: 780px) {
+  body h2 {
+    font-size: 1.88em;
+  }
+  body a {
+    font-size: 1.1em;
+  }
+  body .i-big {
+    font-size: 2.1em;
+  }
+  body i {
+    font-size: 1.38em;
+  }
+  body p {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (min-width: 820px) {
+  body {
+    font-size: 17;
+  }
+  body h2 {
+    font-size: 1.85em;
+  }
+  body a {
+    font-size: 1em;
+  }
+  body .i-big {
+    font-size: 2em;
+  }
+  body i {
+    font-size: 1.3em;
+  }
+  body p {
+    font-size: 1.25em;
+  }
+
+  .menu__item {
+    width: 5.2em;
+  }
+  .menu .sub-menu {
+    width: 6.5em;
+    left: 50%;
+    transform: translateX(-60%);
+  }
+
+  .main {
+    position: relative;
+    top: -4em;
+  }
+  .main__box {
+    width: calc(100% / 3);
+    padding: 1em;
+    float: left;
+  }
+  .main__title {
+    margin-bottom: 0.5em;
+  }
+}
+@media only screen and (min-width: 880px) {
+  body h2 {
+    font-size: 1.85em;
+  }
+  body a {
+    font-size: 1.1em;
+  }
+  body .i-big {
+    font-size: 2.2em;
+  }
+  body i {
+    font-size: 1.3em;
+  }
+  body p {
+    font-size: 1.35em;
+  }
+}
+@media only screen and (min-width: 968px) {
+  body h2 {
+    font-size: 1.88em;
+  }
+  body a {
+    font-size: 1.15em;
+  }
+  body .i-big {
+    font-size: 2.24em;
+  }
+  body i {
+    font-size: 1.3em;
+  }
+  body p {
+    font-size: 1.38em;
+  }
+
+  .menu__item {
+    width: 5.3em;
+  }
+  .menu .sub-menu {
+    width: 6.8em;
+    left: 50%;
+    transform: translateX(-60%);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body {
+    font-size: 17.5;
+  }
+  body h2 {
+    font-size: 1.88em;
+  }
+  body a {
+    font-size: 1.15em;
+  }
+  body .i-big {
+    font-size: 2.24em;
+  }
+  body i {
+    font-size: 1.3em;
+  }
+  body p {
+    font-size: 1.38em;
+  }
+
+  .menu__item {
+    width: 5.3em;
+  }
+  .menu .sub-menu {
+    width: 6.8em;
+    left: 50%;
+    transform: translateX(-60%);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 17.5;
+  }
+  body h2 {
+    font-size: 1.9em;
+  }
+  body a {
+    font-size: 1.2em;
+  }
+  body .i-big {
+    font-size: 2.24em;
+  }
+  body i {
+    font-size: 1.3em;
+  }
+  body p {
+    font-size: 1.4em;
+  }
+
+  .header {
+    height: 5em;
+  }
+  .header__logo {
+    width: 30%;
+    height: 5em;
+    line-height: 5em;
+  }
+
+  .menu {
+    top: -5em;
+    height: 5em;
+  }
+  .menu__list {
+    line-height: 5em;
+    padding-right: 2em;
+  }
+  .menu__item {
+    width: 5.5em;
+    margin-left: 1.2em;
+  }
+  .menu .sub-menu {
+    width: 7em;
+  }
+
+  .main__box {
+    padding: 1.5em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
